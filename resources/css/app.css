@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ======= FLOAT ANIMATION ======= */
+@keyframes floaty {
+    0%   { transform: translateY(0px); }
+    50%  { transform: translateY(-6px); }
+    100% { transform: translateY(0px); }
+}
+
+.animate-floaty {
+    animation: floaty 5s ease-in-out infinite;
+}
+
+/* ======= GLOBAL GLASS STYLE ======= */
+.nav-shell,
+.glass-box,
+.table-glass {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 18px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.35);
+}
+
+/* ======= SHIMMER TEXT ======= */
+.shimmer {
+    background: linear-gradient(90deg, #9b5cf0, #ffd700, #7ae582, #5cb8ff);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 4s ease infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: 0 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0 50%; }
+}
+
+/* ======= TABLE NEON GRID ======= */
+.table-glass td,
+.table-glass th {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.table-glass tr:hover {
+    background: rgba(255,255,255,0.1);
+    transition: 0.3s ease;
+}
+
+/* ======= CHART RESPONSIVE ======= */
+canvas {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 280px;
+}
+
+/* ======= BUTTON OPTION (CLEAN VERSION) ======= */
+.btn-option {
+    @apply flex items-center gap-3 px-4 py-3 rounded-xl text-black font-semibold shadow-md transition-all duration-300;
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.btn-option:hover {
+    background: rgba(255, 255, 255, 0.6);
+    transform: translateX(-4px) scale(1.02);
+    box-shadow: 0 0 12px rgba(147, 112, 219, 0.3);
+}
